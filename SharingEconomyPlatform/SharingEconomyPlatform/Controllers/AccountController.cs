@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using System.Collections.Generic;
 using SharingEconomyPlatform.Models;
 
 namespace SharingEconomyPlatform.Controllers
@@ -149,9 +150,22 @@ namespace SharingEconomyPlatform.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { 
+                    UserName = model.Email, 
+                    Email = model.Email, 
+                    PhoneNumber = model.PhoneNumber,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Gender = model.Gender,
+                    DOB = model.DOB,
+                    Address = model.Address,
+                    City = model.City,
+                    State = model.State,
+                    Zip = model.Zip
+                };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

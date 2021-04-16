@@ -106,3 +106,8 @@ C:\Users\Bharat\source\repos\MiniProject\SharingEconomyPlatform\SharingEconomyPl
 C:\Users\Bharat\source\repos\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.csproj.CopyComplete
 C:\Users\Bharat\source\repos\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.dll
 C:\Users\Bharat\source\repos\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.pdb
+C:\Users\Bharat\Source\Repos\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.InitialCreate.resources
+C:\Users\Bharat\Source\Repos\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.csproj.GenerateResource.cache
+C:\Users\Bharat\Source\Repos\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.initial.resources
+C:\Users\Bharat\Source\Repos\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.firstNameAdded.resources
+C:\Users\Bharat\Source\Repos\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.AddedAllData.resources
