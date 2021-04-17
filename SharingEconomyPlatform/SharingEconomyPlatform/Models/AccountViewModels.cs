@@ -67,7 +67,7 @@ namespace SharingEconomyPlatform.Models
     {
         
         [Required]
-        public string Roll;
+        public string Roll { get; set; }
         
         [Required]
         [Display(Name = "First Name")]
