@@ -2,8 +2,8 @@
 @using SharingEconomyPlatform.Models;
 @{
     ViewBag.Title = "Register";
-    var listItems = new List<string> { "Admin", "Vendor", "Customer" };
-    var Genders = new List<string> { "Male", "Female", "Other" };
+    var Rolls = Magic.Rolls;
+    var Genders = Magic.Genders;
 
 }
 
@@ -19,7 +19,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Roll, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.DropDownListFor(m => m.Roll, new SelectList(listItems),"Select", new { @class = "form-control" })
+            @Html.DropDownListFor(m => m.Roll, new SelectList(Rolls),"Select", new { @class = "form-control" })
         </div>
     </div>
 

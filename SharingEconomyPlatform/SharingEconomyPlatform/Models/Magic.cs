@@ -5,8 +5,9 @@ using System.Web;
 
 namespace SharingEconomyPlatform.Models
 {
-    public class Magic
+    public static class Magic
     {
-        
+        public static List<string> Genders = new List<string> { "Male", "Female", "Other" };
+        public static List<string> Rolls = new List<string> { "Admin", "Vendor", "Customer" };
     }
 }
