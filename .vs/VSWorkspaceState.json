@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Documents"
+    "\\Documents",
+    "\\SharingEconomyPlatform",
+    "\\SharingEconomyPlatform\\SharingEconomyPlatform",
+    "\\SharingEconomyPlatform\\SharingEconomyPlatform\\App_Data",
+    "\\SharingEconomyPlatform\\SharingEconomyPlatform\\Views"
   ],
+  "SelectedNode": "\\SharingEconomyPlatform\\SharingEconomyPlatform.sln",
   "PreviewInSolutionExplorer": false
 }

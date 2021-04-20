@@ -28,5 +28,12 @@ namespace SharingEconomyPlatform.Controllers
 
             return View();
         }
+        
+        public ActionResult Category()
+        {
+            var _context = new ApplicationDbContext();
+            var data = _context.Categories.ToList();
+            return View(data);
+        } 
     }
 }
