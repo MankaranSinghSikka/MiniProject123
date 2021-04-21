@@ -341,3 +341,11 @@ C:\Users\phalgunigupta\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPla
 C:\Users\phalgunigupta\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.pdb
 C:\Users\phalgunigupta\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.InitialCreate1.resources
 C:\Users\phalgunigupta\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.InitialCreate2.resources
+C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.AddedCategoryTable.resources
+C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.InitialCreate1.resources
+C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.InitialCreate2.resources
+C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.EdditedProductTable.resources
+C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.EdditedServiesTable.resources
+C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.AddCartTable.resources
+C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.AddCartTable1.resources
+C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.AddedNotificationTable.resources
