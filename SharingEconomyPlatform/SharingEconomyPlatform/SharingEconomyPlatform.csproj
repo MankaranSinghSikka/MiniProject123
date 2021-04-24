@@ -305,6 +305,7 @@
     <Content Include="Views\Home\AddProduct.cshtml" />
     <Content Include="Views\Home\Service.cshtml" />
     <Content Include="Views\Home\AddService.cshtml" />
+    <Content Include="Views\Manage\EdditProfile.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
