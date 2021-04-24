@@ -1,0 +1,73 @@
+﻿@using SharingEconomyPlatform.Models;
+@model List<serviceCatView>
+@{
+    ViewBag.Title = "Service";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Service</h2>
+
+
+<style>
+    .btn {
+        margin: 5px;
+    }
+
+    .dl {
+        font-weight: bold;
+        margin-right: 5px;
+    }
+
+    .dd {
+    }
+    .Available{
+        color:green;
+    }
+    .NotAvailable{
+        color:red;
+    }
+</style>
+<input type="button" class="btn btn-primary" value="Add Service" onclick="location.href='@Url.Action("AddService", "Home")'" />
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>details</th>
+        <th>Order</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.service.Name</td>
+            <td>
+                <dl>
+                    <div>
+                        <span class="dl">Price: </span>
+                        <span class="dd">@item.service.Price <b>&#8377</b></span>
+                    </div>
+
+                    <div>
+                        <span class="dl">Stock: </span>
+                        <span class="dd">@if(item.service.Available){<span class="Available">Available</span>} else{<span class="NotAvailable">NotcAvailable</span>}</span>
+                    </div>
+                    <div>
+                        <span class="dl">Category: </span>
+                        <span class="dd">@item.category.Name</span>
+                    </div>
+                    <div>
+                        <span class="dl">Vendor: </span>
+                        <span class="dd">@item.vendor.FirstName @item.vendor.LastName</span>
+                    </div>
+
+
+                </dl>
+            </td>
+            <td>
+                <input type="button" name="MoreDetails" value="More Details" class="btn btn-primary" /><br />
+                <input type="button" name="BuyNow" value="Buy Now" class="btn btn-primary" />
+            </td>
+
+        </tr>
+    }
+</table>
