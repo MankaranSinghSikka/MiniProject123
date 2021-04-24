@@ -349,6 +349,7 @@ C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\S
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.AddCartTable.resources
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.AddCartTable1.resources
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.AddedNotificationTable.resources
+<<<<<<< HEAD
 C:\Users\Karan\Source\Repos\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\bin\SharingEconomyPlatform.dll.config
 C:\Users\Karan\Source\Repos\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\bin\SharingEconomyPlatform.dll
 C:\Users\Karan\Source\Repos\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\bin\SharingEconomyPlatform.pdb
@@ -470,3 +471,6 @@ C:\Users\Karan\Source\Repos\MiniProject\SharingEconomyPlatform\SharingEconomyPla
 C:\Users\Karan\Source\Repos\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.csproj.CopyComplete
 C:\Users\Karan\Source\Repos\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.dll
 C:\Users\Karan\Source\Repos\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.pdb
+=======
+C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.AddedTransactionTable.resources
+>>>>>>> efea16ad69bbd131ce58ce0439454f6b43dab920
