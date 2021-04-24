@@ -14,6 +14,79 @@ namespace SharingEconomyPlatform.Models
         public bool BrowserRemembered { get; set; }
     }
 
+    public class ProductView
+    {
+
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        [MaxLength(100)]
+        public string Name { get; set; }
+
+        [Required]
+        public string Category { get; set; }
+
+        [Required]
+        public int Stock { get; set; }
+
+        [Required]
+        [Display(Name = "Location")]
+        public string AvailableLocation { get; set; }
+
+        [Required]
+        public double Price { get; set; }
+
+        [Required]
+        public string Vendor { get; set; }
+
+        [Required]
+        public ApplicationUser user { get; set; }
+    }
+
+    public class ServiceView
+    {
+
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        [MaxLength(100)]
+        public string Name { get; set; }
+
+        [Required]
+        public string Category { get; set; }
+
+        [Required]
+        public bool Available { get; set; }
+
+        [Required]
+        [Display(Name = "Location")]
+        public string AvailableLocation { get; set; }
+
+        [Required]
+        public double Price { get; set; }
+
+        [Required]
+        public string Vendor { get; set; }
+
+        [Required]
+        public ApplicationUser user { get; set; }
+    }
+
+    public class productCatView
+    {
+        public Product product { get; set; }
+        public Category category { get; set; }
+        public ApplicationUser vendor { get; set; }
+    }
+    public class serviceCatView
+    {
+        public Service service { get; set; }
+        public Category category { get; set; }
+        public ApplicationUser vendor { get; set; }
+    }
+
     public class ManageLoginsViewModel
     {
         public IList<UserLoginInfo> CurrentLogins { get; set; }

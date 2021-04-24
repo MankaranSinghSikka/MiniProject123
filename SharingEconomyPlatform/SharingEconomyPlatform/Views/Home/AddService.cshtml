@@ -1,0 +1,61 @@
+﻿@model SharingEconomyPlatform.Models.ServiceView
+@using SharingEconomyPlatform.Models;
+@using Microsoft.AspNet.Identity;
+@{
+    ViewBag.Title = "AddService";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var CategoryList = new ApplicationDbContext().Categories.ToList();
+    Model.Vendor = User.Identity.GetUserId();
+}
+
+<h2>Add Service</h2>
+
+@using (Html.BeginForm("AddSerevice", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Add New Service in your Repository</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Category, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.Category, new SelectList(CategoryList.Select(m => m.Name)), "Select", new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.Name, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.AvailableLocation, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.AvailableLocation, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Price, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.Price, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Available, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.Available, new { htmlAttributes = new { @class = "form-check-input" } })
+        </div>
+    </div>
+    <div>
+        @Html.EditorFor(m => m.Vendor, new { htmlAttributes = new { @class = "form-control", @Value = Model.Vendor } })
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Register" />
+        </div>
+    </div>
+
+}
