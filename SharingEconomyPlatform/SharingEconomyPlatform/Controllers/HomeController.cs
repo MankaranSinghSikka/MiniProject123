@@ -2,12 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
+using System.Dynamic;
+
 using System.Web.Mvc;
 using SharingEconomyPlatform.Models;
 namespace SharingEconomyPlatform.Controllers
 {
     public class HomeController : Controller
     {
+        protected ApplicationDbContext _context { get; set; }
+        protected UserManager<ApplicationUser> UserManager { get; set; }
+        public HomeController()
+        {
+            this._context = new ApplicationDbContext();
+            this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this._context));
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
         public ActionResult Index()
         {
             return View();
@@ -21,6 +39,38 @@ namespace SharingEconomyPlatform.Controllers
             return View();
         }
 
+        
+        public ActionResult Product()
+        {
+            var products = _context.Products.ToList();
+            var categorys = _context.Categories.ToList();
+            var data = from ps in products
+                       join cs in categorys
+                       on ps.Category.Id equals cs.Id
+                       join ur in _context.Users
+                       on ps.Vendor.Id equals ur.Id
+                       select new productCatView{ product = ps, category =  cs, vendor = ur };
+            data = data.ToList();
+
+            return View(data);
+        }
+
+        public ActionResult Service()
+        {
+            var service = _context.Services.ToList();
+            var categorys = _context.Categories.ToList();
+            var data = from ss in service
+                       join cs in categorys
+                       on ss.Category.Id equals cs.Id
+                       join ur in _context.Users
+                       on ss.Vendor.Id equals ur.Id
+                       select new serviceCatView { service = ss, category = cs, vendor = ur };
+            data = data.ToList();
+            
+
+            return View(data);
+        }
+
         [Authorize(Roles = "Admin")]
         public ActionResult Contact()
         {
@@ -31,9 +81,70 @@ namespace SharingEconomyPlatform.Controllers
         
         public ActionResult Category()
         {
-            var _context = new ApplicationDbContext();
+           _context = new ApplicationDbContext();
             var data = _context.Categories.ToList();
             return View(data);
-        } 
+        }
+
+        public ActionResult AddCategory()
+        {
+            return View(new Category());
+        }
+
+        [HttpPost]
+        public ActionResult AddCategory(Category cat)
+        {
+            _context.Categories.Add(cat);
+            _context.SaveChanges();
+            return RedirectToAction("Category", "Home");
+        }
+        
+        [Authorize(Roles = "Admin,Vendor")]
+        public ActionResult AddProduct()
+        {
+            return View(new ProductView());
+        }
+        [Authorize(Roles ="Admin,Vendor")]
+        public ActionResult AddService()
+        {
+            return View(new ServiceView());
+        }
+
+        [Authorize(Roles = "Admin,Vendor")]
+        [HttpPost]
+        public ActionResult AddProduct(ProductView product)
+        {
+            _context.Dispose();
+            Product temp = new Product();
+            var con = new ApplicationDbContext();
+            temp.Name = product.Name;
+            temp.Stock = product.Stock;
+            temp.Price = product.Price;
+            temp.AvailableLocation = product.AvailableLocation;
+            temp.Category =con.Categories.FirstOrDefault(c => c.Name == product.Category);
+            //temp.Vendor = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
+            temp.Vendor = con.Users.Where(u =>u.Id == product.Vendor).FirstOrDefault();
+            con.Products.Add(temp);
+            con.SaveChanges();
+            return RedirectToAction("Product", "Home");
+        }
+
+        [Authorize(Roles = "Admin,Vendor")]
+        [HttpPost]
+        public ActionResult AddSerevice(ServiceView product)
+        {
+            _context.Dispose();
+            Service temp = new Service();
+            var con = new ApplicationDbContext();
+            temp.Name = product.Name;
+            temp.Available = product.Available;
+            temp.Price = product.Price;
+            temp.AvailableLocation = product.AvailableLocation;
+            temp.Category = con.Categories.FirstOrDefault(c => c.Name == product.Category);
+            temp.Vendor = con.Users.Where(u => u.Id == product.Vendor).FirstOrDefault();
+            con.Services.Add(temp);
+            con.SaveChanges();
+            return RedirectToAction("Service", "Home");
+        }
     }
 }
