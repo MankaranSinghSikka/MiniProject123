@@ -227,6 +227,10 @@
     <Compile Include="Migrations\202104221224105_AddedTransactionTable.Designer.cs">
       <DependentUpon>202104221224105_AddedTransactionTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104260446385_GetProductDetails.cs" />
+    <Compile Include="Migrations\202104260446385_GetProductDetails.Designer.cs">
+      <DependentUpon>202104260446385_GetProductDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -250,6 +254,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\my style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -396,6 +401,9 @@
     <Content Include="Views\Home\Service.cshtml" />
     <Content Include="Views\Home\AddService.cshtml" />
     <Content Include="Views\Manage\EdditProfile.cshtml" />
+    <Content Include="Views\Home\ViewCart.cshtml" />
+    <Content Include="Views\Home\BuyNowProduct.cshtml" />
+    <Content Include="Views\Home\BuyNowService.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -441,6 +449,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104221224105_AddedTransactionTable.resx">
       <DependentUpon>202104221224105_AddedTransactionTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104260446385_GetProductDetails.resx">
+      <DependentUpon>202104260446385_GetProductDetails.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

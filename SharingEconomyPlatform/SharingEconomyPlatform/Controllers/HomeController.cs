@@ -21,6 +21,31 @@ namespace SharingEconomyPlatform.Controllers
             this._context = new ApplicationDbContext();
             this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this._context));
         }
+        [Authorize(Roles ="Customer")]
+        public ActionResult AddInCart(int ProId, string CusId)
+        {
+
+            Cart c = new Cart() { Customer = _context.Users.Where(u => u.Id == CusId).FirstOrDefault(), Product = _context.Products.Where(p => p.Id == ProId).FirstOrDefault() };
+            _context.Carts.Add(c);
+            _context.SaveChanges();
+            return RedirectToAction("Product");
+        }
+
+        [Authorize(Roles = "Customer")]
+        public ActionResult RemoveFromCart(int ProId, string CusId)
+        {
+
+               Cart t = _context.Carts.Where(c => c.Customer.Id == CusId && c.Product.Id == ProId).FirstOrDefault();
+            _context.Carts.Remove(t);
+            _context.SaveChanges();
+            return RedirectToAction("ViewCart");
+        }
+
+        [Authorize(Roles = "Customer")]
+        public ActionResult ViewCart()
+        {
+            return View();
+        }
 
         protected override void Dispose(bool disposing)
         {
@@ -30,6 +55,22 @@ namespace SharingEconomyPlatform.Controllers
         {
             return View();
         }
+
+        [Authorize(Roles = "Customer")]
+        public ActionResult BuyNowProduct( int product)
+        {
+            var data = _context.Products.Where(p => p.Id == product).FirstOrDefault();
+
+            return View(data);
+        }
+        [Authorize(Roles = "Customer")]
+        public ActionResult BuyNowService( int product)
+        {
+            var data = _context.Services.Where(p => p.Id == product).FirstOrDefault();
+
+            return View(data);
+        }
+
 
         [Authorize(Roles = "Customer")]
         public ActionResult About()
@@ -51,7 +92,6 @@ namespace SharingEconomyPlatform.Controllers
                        on ps.Vendor.Id equals ur.Id
                        select new productCatView{ product = ps, category =  cs, vendor = ur };
             data = data.ToList();
-
             return View(data);
         }
 

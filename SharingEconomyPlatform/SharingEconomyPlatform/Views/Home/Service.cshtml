@@ -48,8 +48,8 @@
                     </div>
 
                     <div>
-                        <span class="dl">Stock: </span>
-                        <span class="dd">@if(item.service.Available){<span class="Available">Available</span>} else{<span class="NotAvailable">NotcAvailable</span>}</span>
+                        <span class="dl">Availability: </span>
+                        <span class="dd">@if(item.service.Available){<span class="Available">Available</span>} else{<span class="NotAvailable">Not Available</span>}</span>
                     </div>
                     <div>
                         <span class="dl">Category: </span>
@@ -65,7 +65,7 @@
             </td>
             <td>
                 <input type="button" name="MoreDetails" value="More Details" class="btn btn-primary" /><br />
-                <input type="button" name="BuyNow" value="Buy Now" class="btn btn-primary" />
+                <input type="button" name="BuyNow" value="Buy Now" class="btn btn-primary" onclick="location.href='@Url.Action("BuyNowService", "Home",new {product = item.service.Id})'"  />
             </td>
 
         </tr>
