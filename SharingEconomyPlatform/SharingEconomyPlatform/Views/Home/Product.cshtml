@@ -11,25 +11,26 @@
         margin: 5px;
     }
 
-    .dl{
-        font-weight:bold;
+    .dl {
+        font-weight: bold;
         margin-right: 5px;
+        padding-right: 5px
     }
 
-    .dd{
-
+    .dd {
+        padding-right: 5px
     }
 </style>
-<input type="button" class="btn btn-primary"  value="Add Product" onclick="location.href='@Url.Action("AddProduct", "Home")'" />
+<input type="button" class="btn btn-primary" value="Add Product" onclick="location.href='@Url.Action("AddProduct", "Home")'" />
 
 <table class="table">
     <tr>
         <th>Name</th>
         <th>details</th>
         <th>Order</th>
-        
+
     </tr>
-    @foreach(var item in Model)
+    @foreach (var item in Model)
     {
         <tr>
             <td>@item.product.Name</td>
@@ -52,15 +53,47 @@
                         <span class="dl">Vendor: </span>
                         <span class="dd">@item.vendor.FirstName @item.vendor.LastName</span>
                     </div>
-                    
-                    
+
+
                 </dl>
             </td>
             <td>
-                <input type="button" name="AddToCart"  value="Add in Cart" class="btn btn-primary" /><br />
-                <input type="button" name="BuyNow"  value="Buy Now" class="btn btn-primary" />
+                <input type="button" name="AddToCart" value="Add in Cart" class="btn btn-primary" /><br />
+                <input type="button" name="BuyNow" value="Buy Now" class="btn btn-primary" />
             </td>
-            
+
         </tr>
     }
 </table>
+
+@foreach (var item in Model)
+{
+<div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+    <h2 class="card-header" style="padding-right: 5px">@item.product.Name</h2>
+    <div class="card-body">
+        <div>
+            <span class="dl">Price: </span>
+            <span class="dd">@item.product.Price <b>&#8377</b></span>
+        </div>
+        <div>
+            <span class="dl">Stock: </span>
+            <span class="dd">@item.product.Stock</span>
+        </div>
+        <div>
+            <span class="dl">Category: </span>
+            <span class="dd">@item.category.Name</span>
+        </div>
+        <div>
+            <span class="dl">Vendor: </span>
+            <span class="dd">@item.vendor.FirstName @item.vendor.LastName</span>
+        </div>
+        
+    </div>
+    <div>
+        <input type="button" name="AddToCart" value="Add in Cart" class="btn btn-primary" /><br />
+        <input type="button" name="BuyNow" value="Buy Now" class="btn btn-primary" />
+    </div>
+</div>
+
+}
+

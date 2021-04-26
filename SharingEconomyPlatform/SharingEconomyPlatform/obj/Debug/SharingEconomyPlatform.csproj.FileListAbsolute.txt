@@ -474,3 +474,4 @@ C:\Users\Karan\Source\Repos\MiniProject\SharingEconomyPlatform\SharingEconomyPla
 =======
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.AddedTransactionTable.resources
 >>>>>>> efea16ad69bbd131ce58ce0439454f6b43dab920
+C:\Users\Karan\source\repos\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.AddedTransactionTable.resources
