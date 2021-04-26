@@ -1,0 +1,70 @@
+﻿@using SharingEconomyPlatform.Models;
+@using Microsoft.AspNet.Identity;
+@using Microsoft.AspNet.Identity.EntityFramework;
+@{
+    ViewBag.Title = "ViewCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cart</h2>
+
+@{
+    var _con = new ApplicationDbContext();
+    string id = User.Identity.GetUserId();
+    var productId = _con.Carts.Where(c => c.Customer.Id == id).Select(c => c.Product.Id).Distinct().ToList();
+    var product = (from p in _con.Products
+                   where productId.Contains(p.Id)
+                   join c in _con.Categories
+                   on p.Category.Id equals c.Id
+                   join u in _con.Users
+                   on p.Vendor.Id equals u.Id
+                   select new { product = p, vendor = u, category = c }).ToList();
+}
+
+
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>details</th>
+        <th>Order</th>
+
+    </tr>
+    @foreach (var item in product)
+    {
+        <tr>
+            <td>@item.product.Name</td>
+            <td>
+                <dl>
+                    <div>
+                        <span class="dl">Price: </span>
+                        <span class="dd">@item.product.Price <b>&#8377</b></span>
+                    </div>
+
+                    <div>
+                        <span class="dl">Stock: </span>
+                        <span class="dd">@item.product.Stock</span>
+                    </div>
+                    <div>
+                        <span class="dl">Category: </span>
+                        <span class="dd">@item.category.Name</span>
+                    </div>
+                    <div>
+                        <span class="dl">Vendor: </span>
+                        <span class="dd">@item.vendor.FirstName @item.vendor.LastName</span>
+                    </div>
+
+
+                </dl>
+            </td>
+           
+           
+            
+                <td>
+                    <input type="button" name="AddToCart" value="Remove" class="btn btn-primary" onclick="location.href='@Url.Action("RemoveFromCart", "Home",new { ProId = item.product.Id, CusId = User.Identity.GetUserId()})'" /><br />
+                    <input type="button" name="BuyNow" value="Buy Now" class="btn btn-primary" />
+                </td>
+            
+        </tr>
+    }
+</table>

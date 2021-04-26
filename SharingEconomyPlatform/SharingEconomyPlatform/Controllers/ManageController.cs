@@ -15,9 +15,29 @@ namespace SharingEconomyPlatform.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        protected ApplicationDbContext _context;
 
         public ManageController()
         {
+            _context = new ApplicationDbContext();
+        }
+
+        public ActionResult EdditProfile()
+        {
+            _context = new ApplicationDbContext();
+            string id = User.Identity.GetUserId();
+            ApplicationUser data = _context.Users.Where(u => u.Id == id).FirstOrDefault();
+            return View(data);
+        }
+        [HttpPost]
+        public ActionResult EdditProfile( ApplicationUser user)
+        {
+            ApplicationUser ur = _context.Users.Where( u => u.Id == user.Id).FirstOrDefault();
+            ur.LastName = user.LastName;
+            _context.SaveChanges();
+
+            
+            return RedirectToAction("index");
         }
 
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)

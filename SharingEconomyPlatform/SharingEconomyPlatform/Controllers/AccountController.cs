@@ -30,6 +30,8 @@ namespace SharingEconomyPlatform.Controllers
             SignInManager = signInManager;
         }
 
+        
+
         public ApplicationSignInManager SignInManager
         {
             get

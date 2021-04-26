@@ -1,4 +1,5 @@
 ﻿@using SharingEconomyPlatform.Models;
+@using Microsoft.AspNet.Identity;
 @model List<productCatView>
 @{
     ViewBag.Title = "Product";
@@ -26,21 +27,22 @@
 <table class="table">
     <tr>
         <th>Name</th>
-        <th>details</th>
+        <th>Details</th>
         <th>Order</th>
 
     </tr>
     @foreach (var item in Model)
     {
-        <tr>
-            <td>@item.product.Name</td>
-            <td>
-                <dl>
-                    <div>
-                        <span class="dl">Price: </span>
-                        <span class="dd">@item.product.Price <b>&#8377</b></span>
-                    </div>
+<tr>
+    <td>@item.product.Name</td>
+    <td>
+        <dl>
+            <div>
+                <span class="dl">Price: </span>
+                <span class="dd">@item.product.Price <b>&#8377</b></span>
+            </div>
 
+<<<<<<< HEAD
                     <div>
                         <span class="dl">Stock: </span>
                         <span class="dd">@item.product.Stock</span>
@@ -63,6 +65,41 @@
             </td>
 
         </tr>
+=======
+            <div>
+                <span class="dl">Stock: </span>
+                <span class="dd">@item.product.Stock</span>
+            </div>
+            <div>
+                <span class="dl">Category: </span>
+                <span class="dd">@item.category.Name</span>
+            </div>
+            <div>
+                <span class="dl">Vendor: </span>
+                <span class="dd">@item.vendor.FirstName @item.vendor.LastName</span>
+            </div>
+
+
+        </dl>
+    </td>
+    @if (User.IsInRole("Admin") || User.IsInRole("Vendor"))
+    {
+
+        <td>
+            <input type="button" name="Eddit Detail" value="Eddit Detail" class="btn btn-primary" /><br />
+            <input type="button" name="Remove" value="Remove" class="btn btn-primary" />
+        </td>
+
+    }
+    else
+    {
+        <td>
+            <input type="button" name="AddToCart" value="Add in Cart" class="btn btn-primary" onclick="location.href='@Url.Action("AddInCart", "Home",new { ProId = item.product.Id, CusId = User.Identity.GetUserId()})'"/><br />
+            <input type="button" name="BuyNow" value="Buy Now" class="btn btn-primary" onclick="location.href='@Url.Action("BuyNowProduct", "Home",new {product = item.product.Id})'" />
+        </td>
+    }
+</tr>
+>>>>>>> 34e45d9f3b5b2a73e14960cc67c9a4d27c39cf41
     }
 </table>
 
