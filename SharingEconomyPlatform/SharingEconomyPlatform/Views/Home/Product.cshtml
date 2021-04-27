@@ -1,0 +1,66 @@
+﻿@using SharingEconomyPlatform.Models;
+@model List<productCatView>
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Product</h2>
+<style>
+    .btn {
+        margin: 5px;
+    }
+
+    .dl{
+        font-weight:bold;
+        margin-right: 5px;
+    }
+
+    .dd{
+
+    }
+</style>
+<input type="button" class="btn btn-primary"  value="Add Product" onclick="location.href='@Url.Action("AddProduct", "Home")'" />
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>details</th>
+        <th>Order</th>
+        
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.product.Name</td>
+            <td>
+                <dl>
+                    <div>
+                        <span class="dl">Price: </span>
+                        <span class="dd">@item.product.Price <b>&#8377</b></span>
+                    </div>
+
+                    <div>
+                        <span class="dl">Stock: </span>
+                        <span class="dd">@item.product.Stock</span>
+                    </div>
+                    <div>
+                        <span class="dl">Category: </span>
+                        <span class="dd">@item.category.Name</span>
+                    </div>
+                    <div>
+                        <span class="dl">Vendor: </span>
+                        <span class="dd">@item.vendor.FirstName @item.vendor.LastName</span>
+                    </div>
+                    
+                    
+                </dl>
+            </td>
+            <td>
+                <input type="button" name="AddToCart"  value="Add in Cart" class="btn btn-primary" /><br />
+                <input type="button" name="BuyNow"  value="Buy Now" class="btn btn-primary" />
+            </td>
+            
+        </tr>
+    }
+</table>

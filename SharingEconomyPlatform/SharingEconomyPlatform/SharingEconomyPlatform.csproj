@@ -189,11 +189,53 @@
     <Compile Include="Migrations\202104161258070_AddedAllData.Designer.cs">
       <DependentUpon>202104161258070_AddedAllData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104191210259_AddedCategoryTable.cs" />
+    <Compile Include="Migrations\202104191210259_AddedCategoryTable.Designer.cs">
+      <DependentUpon>202104191210259_AddedCategoryTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104201332001_InitialCreate1.cs" />
+    <Compile Include="Migrations\202104201332001_InitialCreate1.Designer.cs">
+      <DependentUpon>202104201332001_InitialCreate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104201342194_InitialCreate2.cs" />
+    <Compile Include="Migrations\202104201342194_InitialCreate2.Designer.cs">
+      <DependentUpon>202104201342194_InitialCreate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104210759561_EdditedProductTable.cs" />
+    <Compile Include="Migrations\202104210759561_EdditedProductTable.Designer.cs">
+      <DependentUpon>202104210759561_EdditedProductTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104210837180_EdditedServiesTable.cs" />
+    <Compile Include="Migrations\202104210837180_EdditedServiesTable.Designer.cs">
+      <DependentUpon>202104210837180_EdditedServiesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104210906296_AddCartTable.cs" />
+    <Compile Include="Migrations\202104210906296_AddCartTable.Designer.cs">
+      <DependentUpon>202104210906296_AddCartTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104210913490_AddCartTable1.cs" />
+    <Compile Include="Migrations\202104210913490_AddCartTable1.Designer.cs">
+      <DependentUpon>202104210913490_AddCartTable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104210935392_AddedNotificationTable.cs" />
+    <Compile Include="Migrations\202104210935392_AddedNotificationTable.Designer.cs">
+      <DependentUpon>202104210935392_AddedNotificationTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104221224105_AddedTransactionTable.cs" />
+    <Compile Include="Migrations\202104221224105_AddedTransactionTable.Designer.cs">
+      <DependentUpon>202104221224105_AddedTransactionTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Magic.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Service.cs" />
+    <Compile Include="Models\Transaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -257,6 +299,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Category.cshtml" />
+    <Content Include="Views\Home\Product.cshtml" />
+    <Content Include="Views\Home\AddCategory.cshtml" />
+    <Content Include="Views\Home\AddProduct.cshtml" />
+    <Content Include="Views\Home\Service.cshtml" />
+    <Content Include="Views\Home\AddService.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -284,6 +332,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104161258070_AddedAllData.resx">
       <DependentUpon>202104161258070_AddedAllData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104191210259_AddedCategoryTable.resx">
+      <DependentUpon>202104191210259_AddedCategoryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104201332001_InitialCreate1.resx">
+      <DependentUpon>202104201332001_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104201342194_InitialCreate2.resx">
+      <DependentUpon>202104201342194_InitialCreate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104210759561_EdditedProductTable.resx">
+      <DependentUpon>202104210759561_EdditedProductTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104210837180_EdditedServiesTable.resx">
+      <DependentUpon>202104210837180_EdditedServiesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104210906296_AddCartTable.resx">
+      <DependentUpon>202104210906296_AddCartTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104210913490_AddCartTable1.resx">
+      <DependentUpon>202104210913490_AddCartTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104210935392_AddedNotificationTable.resx">
+      <DependentUpon>202104210935392_AddedNotificationTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104221224105_AddedTransactionTable.resx">
+      <DependentUpon>202104221224105_AddedTransactionTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

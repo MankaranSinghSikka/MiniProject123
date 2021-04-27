@@ -48,6 +48,13 @@ namespace SharingEconomyPlatform.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

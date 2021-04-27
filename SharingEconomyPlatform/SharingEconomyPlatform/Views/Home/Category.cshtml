@@ -1,0 +1,23 @@
+﻿@model List< SharingEconomyPlatform.Models.Category>
+@{
+    ViewBag.Title = "Cetegory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cetegory</h2>
+<input type="button" value="Add Product" onclick="location.href='AddCategory'" />
+
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                </tr>
+            }
+</table>
