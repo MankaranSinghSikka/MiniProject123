@@ -1,35 +1,84 @@
 ﻿@using Microsoft.AspNet.Identity
+@using SharingEconomyPlatform.Models;
 @{
     ViewBag.Title = "Home Page";
-    var demo = "guys";
+    string demo = "guys";
+    var _con = new ApplicationDbContext();
+    string id = User.Identity.GetUserId();
+    ApplicationUser user = _con.Users.Where(u => u.Id == id).FirstOrDefault();
+    var products = from ps in _con.Products
+                   join cs in _con.Categories
+                   on ps.Category.Id equals cs.Id
+                   join ur in _con.Users
+                   on ps.Vendor.Id equals ur.Id
+                   select new productCatView { product = ps, category = cs, vendor = ur };
+    
+    var services = from ps in _con.Services
+                   join cs in _con.Categories
+                   on ps.Category.Id equals cs.Id
+                   join ur in _con.Users
+                   on ps.Vendor.Id equals ur.Id
+                   select new serviceCatView { service = ps, category = cs, vendor = ur }; 
+
 }
-@if (Request.IsAuthenticated) {
-    demo = User.Identity.GetUserName();
+@if (Request.IsAuthenticated)
+{
+    demo = user.FirstName + " " + user.LastName;
 }
+@Styles.Render("~/Content/my style.css")
+
+
+
 <div class="jumbotron">
     <h1>Hi @demo</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <p class="lead">We Provides Lots for Products and Services all Over The World.</p>
+    @if (!Request.IsAuthenticated)
+    {
+        <p><input type="button" class="btn btn-primary" value="Login Here" onclick="location.href='@Url.Action("Login", "Account")'" /></p>
+    }
+
 </div>
 
+<h2>Products</h2>
+<hr />
+
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+    @foreach (var item in products)
+    {
+
+        <div class="col-md-3">
+            <div class="cardp">
+                <div class="container">
+                    <h4><b>@item.product.Name</b></h4>
+                    <p><b>Rate :</b><span> @item.product.Price</span><b>&#8377</b></p>
+                    <p><b>Stock :</b><span>@item.product.Stock</span></p>
+                    <p><b>Category :</b><span>@item.category.Name</span></p>
+                    <p><b>Vendor :</b><span>@item.vendor.FirstName @item.vendor.LastName</span></p>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<br />
+
+<h2> Servises</h2>
+<hr />
+<div class="row">
+    @foreach (var item in services)
+    {
+
+        <div class="col-md-3">
+            <div class="cardp">
+                <div class="container">
+                    <h4><b>@item.service.Name</b></h4>
+                    <p><b>Rate :</b><span> @item.service.Price</span><b>&#8377</b></p>
+                    <p><b>Stock :</b><span>@item.service.Available</span></p>
+                    <p><b>Category :</b><span>@item.category.Name</span></p>
+                    <p><b>Vendor :</b><span>@item.vendor.FirstName @item.vendor.LastName</span></p>
+
+                </div>
+            </div>
+        </div>
+    }
 </div>

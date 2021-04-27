@@ -1,0 +1,45 @@
+﻿@model SharingEconomyPlatform.Models.Service
+@{
+    ViewBag.Title = "BuyNowService";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    double total = Model.Price;
+}
+
+<h2>Buy Now</h2>
+
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Agvalibality</th>
+        <th>Base Amount</th>
+        <th> Total Amount</th>
+    </tr>
+
+    <tr>
+        <td>@Model.Name</td>
+        <td>@Model.Available</td>
+        <td>@Model.Price<b>&#8377</b></td>
+        <td>@total<b>&#8377</b></td>
+
+    </tr>
+
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><b border="green">@total</b><b>&#8377</b></td>
+
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="2">
+            <input type="button" class="btn btn-primary" value="Checkout" onclick="location.href='@Url.Action("AddProduct", "Home")'" style="align:center;" />
+        </td>
+
+        <td></td>
+
+    </tr>
+
+
+</table>

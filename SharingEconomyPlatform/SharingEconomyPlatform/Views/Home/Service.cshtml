@@ -1,11 +1,13 @@
 ﻿@using SharingEconomyPlatform.Models;
 @model List<serviceCatView>
+@using Microsoft.AspNet.Identity;
 @{
     ViewBag.Title = "Service";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<serviceCatView> Model2 = Model;
 }
 
-<h2>Service</h2>
+
 
 
 <style>
@@ -20,14 +22,40 @@
 
     .dd {
     }
-    .Available{
-        color:green;
+
+    .Available {
+        color: green;
     }
-    .NotAvailable{
-        color:red;
+
+    .NotAvailable {
+        color: red;
     }
 </style>
-<input type="button" class="btn btn-primary" value="Add Service" onclick="location.href='@Url.Action("AddService", "Home")'" />
+
+
+@if (!Request.IsAuthenticated)
+{
+
+    <h2>Services</h2>
+}
+else if (User.IsInRole("Customer"))
+{
+<h2>Services</h2>
+
+
+}
+else if (User.IsInRole("Admin"))
+{
+    <h2>Service Available</h2>
+}
+else if (User.IsInRole("Vendor"))
+{
+    <h2>Service Awailable In Repository</h2>
+    <input type="button" class="btn btn-primary" value="Add Service" onclick="location.href='@Url.Action("AddService", "Home")'" />
+    var id = User.Identity.GetUserId();
+
+    Model2 = (from m in Model where m.vendor.Id == id select m).ToList();
+}
 
 <table class="table">
     <tr>
@@ -36,7 +64,7 @@
         <th>Order</th>
 
     </tr>
-    @foreach (var item in Model)
+    @foreach (var item in Model2)
     {
         <tr>
             <td>@item.service.Name</td>
@@ -48,8 +76,13 @@
                     </div>
 
                     <div>
-                        <span class="dl">Stock: </span>
-                        <span class="dd">@if(item.service.Available){<span class="Available">Available</span>} else{<span class="NotAvailable">NotcAvailable</span>}</span>
+                        <span class="dl">Availability: </span>
+                        <span class="dd">
+                            @if (item.service.Available)
+                            {<span class="Available">Available</span>}
+                            else
+                            {<span class="NotAvailable">Not Available</span>}
+                        </span>
                     </div>
                     <div>
                         <span class="dl">Category: </span>
@@ -63,10 +96,22 @@
 
                 </dl>
             </td>
-            <td>
-                <input type="button" name="MoreDetails" value="More Details" class="btn btn-primary" /><br />
-                <input type="button" name="BuyNow" value="Buy Now" class="btn btn-primary" />
-            </td>
+            @if (User.IsInRole("Admin") || User.IsInRole("Vendor"))
+            {
+
+                <td>
+                    <input type="button" name="Eddit Detail" value="Eddit Detail" class="btn btn-primary" /><br />
+                    <input type="button" name="Remove" value="Remove" class="btn btn-primary" />
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    <input type="button" name="AddToCart" value="Details" class="btn btn-primary" /><br />
+                    <input type="button" name="BuyNow" value="Buy Now" class="btn btn-primary" onclick="location.href='@Url.Action("BuyNowService", "Home",new {product = item.service.Id})'" />
+                </td>
+            }
 
         </tr>
     }
