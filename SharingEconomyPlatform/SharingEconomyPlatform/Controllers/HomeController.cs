@@ -41,6 +41,12 @@ namespace SharingEconomyPlatform.Controllers
             return RedirectToAction("ViewCart");
         }
 
+        public ActionResult temp()
+        {
+           var data= _context.Products.FirstOrDefault();
+            return View(data);
+        }
+
         [Authorize(Roles = "Customer")]
         public ActionResult ViewCart()
         {
@@ -89,7 +95,7 @@ namespace SharingEconomyPlatform.Controllers
                        join cs in categorys
                        on ps.Category.Id equals cs.Id
                        join ur in _context.Users
-                       on ps.Vendor.Id equals ur.Id
+                       on ps.Vendor.Id equals ur.Id 
                        select new productCatView{ product = ps, category =  cs, vendor = ur };
             data = data.ToList();
             return View(data);

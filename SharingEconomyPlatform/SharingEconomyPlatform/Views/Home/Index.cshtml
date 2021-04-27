@@ -12,6 +12,7 @@
                    join ur in _con.Users
                    on ps.Vendor.Id equals ur.Id
                    select new productCatView { product = ps, category = cs, vendor = ur };
+    
     var services = from ps in _con.Services
                    join cs in _con.Categories
                    on ps.Category.Id equals cs.Id

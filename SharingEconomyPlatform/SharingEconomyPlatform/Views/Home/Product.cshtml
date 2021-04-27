@@ -4,9 +4,10 @@
 @{
     ViewBag.Title = "Product";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<productCatView> Model2 = Model;
+
 }
 
-<h2>Product</h2>
 <style>
     .btn {
         margin: 5px;
@@ -19,11 +20,39 @@
     }
 
     .dd {
+<<<<<<< HEAD
         padding-right: 5px
     }
 </style>
 <input type="button" class="btn btn-primary" value="Add Product" onclick="location.href='@Url.Action("AddProduct", "Home")'" />
+=======
+    }
+</style>
+>>>>>>> e21e104285554459bff1fa4ad476021450da6923
 
+@if (!Request.IsAuthenticated)
+{
+
+    <h2>Products</h2>
+}
+else if (User.IsInRole("Customer"))
+{
+    <h2>Products</h2>
+
+
+}
+else if (User.IsInRole("Admin"))
+{
+    <h2>Products Available</h2>
+}
+else if (User.IsInRole("Vendor"))
+{
+    <h2>Products Awailable In Repository</h2>
+    <input type="button" class="btn btn-primary" value="Add Product" onclick="location.href='@Url.Action("AddProduct", "Home")'" />
+    var id = User.Identity.GetUserId();
+
+    Model2 = (from m in Model where m.vendor.Id == id select m).ToList();
+}
 <table class="table">
     <tr>
         <th>Name</th>
@@ -31,18 +60,25 @@
         <th>Order</th>
 
     </tr>
+<<<<<<< HEAD
     @foreach (var item in Model)
+=======
+    @foreach (var item in Model2)
+>>>>>>> e21e104285554459bff1fa4ad476021450da6923
     {
-<tr>
-    <td>@item.product.Name</td>
-    <td>
-        <dl>
-            <div>
-                <span class="dl">Price: </span>
-                <span class="dd">@item.product.Price <b>&#8377</b></span>
-            </div>
+        <tr>
+            <td>@item.product.Name</td>
+            <td>
+                <dl>
+                    <div>
+                        <span class="dl">Price: </span>
+                        <span class="dd">@item.product.Price <b>&#8377</b></span>
+                    </div>
 
+<<<<<<< HEAD
 /*<<<<<<< HEAD*/
+=======
+>>>>>>> e21e104285554459bff1fa4ad476021450da6923
                     <div>
                         <span class="dl">Stock: </span>
                         <span class="dd">@item.product.Stock</span>
@@ -55,6 +91,7 @@
                         <span class="dl">Vendor: </span>
                         <span class="dd">@item.vendor.FirstName @item.vendor.LastName</span>
                     </div>
+<<<<<<< HEAD
 
 
                 </dl>
@@ -78,18 +115,21 @@
                 <span class="dl">Vendor: </span>
                 <span class="dd">@item.vendor.FirstName @item.vendor.LastName</span>
             </div>
+=======
+>>>>>>> e21e104285554459bff1fa4ad476021450da6923
 
 
-        </dl>
-    </td>
-    @if (User.IsInRole("Admin") || User.IsInRole("Vendor"))
-    {
+                </dl>
+            </td>
+            @if (User.IsInRole("Admin") || User.IsInRole("Vendor"))
+            {
 
-        <td>
-            <input type="button" name="Eddit Detail" value="Eddit Detail" class="btn btn-primary" /><br />
-            <input type="button" name="Remove" value="Remove" class="btn btn-primary" />
-        </td>
+                <td>
+                    <input type="button" name="Eddit Detail" value="Eddit Detail" class="btn btn-primary" /><br />
+                    <input type="button" name="Remove" value="Remove" class="btn btn-primary" />
+                </td>
 
+<<<<<<< HEAD
     }
     else
     {
@@ -100,6 +140,17 @@
     }
 </tr>
 /*>>>>>>> 34e45d9f3b5b2a73e14960cc67c9a4d27c39cf418 */
+=======
+            }
+            else
+            {
+                <td>
+                    <input type="button" name="AddToCart" value="Add in Cart" class="btn btn-primary" onclick="location.href='@Url.Action("AddInCart", "Home",new { ProId = item.product.Id, CusId = User.Identity.GetUserId()})'" /><br />
+                    <input type="button" name="BuyNow" value="Buy Now" class="btn btn-primary" onclick="location.href='@Url.Action("BuyNowProduct", "Home",new {product = item.product.Id})'" />
+                </td>
+            }
+        </tr>
+>>>>>>> e21e104285554459bff1fa4ad476021450da6923
     }
 </table>
 

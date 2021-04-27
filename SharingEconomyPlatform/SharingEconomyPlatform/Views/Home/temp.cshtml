@@ -1,0 +1,20 @@
+﻿@model SharingEconomyPlatform.Models.Product
+@{
+    ViewBag.Title = "temp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>temp</h2>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+    </tr>
+    <tr>
+        <td>@Model.Name</td>
+        <td>@Model.Price</td>
+        <td>@Model.Category.Name</td>
+    </tr>
+</table>
