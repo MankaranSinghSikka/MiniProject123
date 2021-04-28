@@ -42,6 +42,7 @@
                                              join u in _con.Users
                                              on c.User.Id equals u.Id
                                              select c.User.Id).Where(c => c == id).Count();
+                        var req = _con.Helprequests.Count();
                     }
                     @if (User.IsInRole("Customer"))
                     {
@@ -51,7 +52,18 @@
                     }
                     @if (Request.IsAuthenticated)
                     {
-                    <li>@Html.ActionLink("Notifications(" + @notifications + ")", "Notification", "Home")</li>
+                        <li>@Html.ActionLink("Notifications(" + @notifications + ")", "Notification", "Home")</li>
+                    }
+                    else { }
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li>@Html.ActionLink("Help Request(" + @req + ")", "Requests", "Help")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Help", "Query", "Help")</li>
+
                     }
                 </ul>
 

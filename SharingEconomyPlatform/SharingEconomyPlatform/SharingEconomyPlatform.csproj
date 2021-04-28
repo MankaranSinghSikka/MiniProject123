@@ -173,6 +173,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HelpController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
@@ -262,6 +263,7 @@
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Helprequest.cs" />
+    <Compile Include="Models\HelpView.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Magic.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -445,6 +447,8 @@
     <Content Include="Views\Payment\PaymentPage.cshtml" />
     <Content Include="Views\Home\Notification.cshtml" />
     <Content Include="Views\Home\DetailS.cshtml" />
+    <Content Include="Views\Help\Query.cshtml" />
+    <Content Include="Views\Help\Requests.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

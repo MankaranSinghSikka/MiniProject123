@@ -47,15 +47,15 @@
 
 
     <div class="form-group">
-        @Html.LabelFor(m=>m.Avalable, new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m=>m.Available, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.EditorFor(m => m.Avalable, new { htmlAttributes = new { @class = "form-control", @Value = Model.Avalable } })
+            @Html.EditorFor(m => m.Available, new { htmlAttributes = new { @class = "form-check-input ", @Value = Model.Available } })
         </div>
     </div>
     <div class="hidden">
         @Html.EditorFor(m => m.Vendor, new { htmlAttributes = new { @class = "form-control", @Value = Model.Vendor } })
     </div>
-    <div class="form-group">
+    <div class="form-group ">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" class="btn btn-default" value="Register" />
         </div>

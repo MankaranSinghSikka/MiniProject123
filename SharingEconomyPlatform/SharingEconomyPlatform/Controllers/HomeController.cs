@@ -95,6 +95,14 @@ namespace SharingEconomyPlatform.Controllers
             _context.SaveChanges();
             return RedirectToAction("Product");
         }
+
+        public ActionResult EdditDetailss(Service p)
+        {
+            var pt = _context.Services.Where(m => m.Id == p.Id).FirstOrDefault();
+            pt = p;
+            _context.SaveChanges();
+            return RedirectToAction("Product");
+        }
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
