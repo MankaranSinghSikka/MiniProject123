@@ -24,12 +24,8 @@
     }
 
     .dd {
-        padding-right: 5px
     }
 </style>
-
-
-
 
 @if (!Request.IsAuthenticated)
 {
@@ -54,8 +50,6 @@ else if (User.IsInRole("Vendor"))
 
     Model2 = (from m in Model where m.vendor.Id == id select m).ToList();
 }
-<input type="button" class="btn btn-primary" value="Add Product" onclick="location.href='@Url.Action("AddProduct", "Home")'" />
-
 <table class="table">
     <tr>
         <th>Name</th>
@@ -63,11 +57,7 @@ else if (User.IsInRole("Vendor"))
         <th>Order</th>
 
     </tr>
-
-
-
     @foreach (var item in Model2)
-
     {
         <tr>
             <td>@item.product.Name</td>
@@ -77,10 +67,6 @@ else if (User.IsInRole("Vendor"))
                         <span class="dl">Price: </span>
                         <span class="dd">@item.product.Price <b>&#8377</b></span>
                     </div>
-
-
-
-
 
                     <div>
                         <span class="dl">Stock: </span>
@@ -96,30 +82,24 @@ else if (User.IsInRole("Vendor"))
                     </div>
 
 
-
                 </dl>
             </td>
-
-
-
             @if (User.IsInRole("Admin") || User.IsInRole("Vendor"))
             {
 
                 <td>
-                    <input type="button" name="Eddit Detail" value="Eddit Detail" class="btn btn-primary " onclick="location.href='@Url.Action("Detail", "Home", new { product = item.product.Id, stat = true })'" /><br />
-                    <input type="button" name="Remove" value="Remove" class="btn btn-primary" onclick="location.href='@Url.Action("Remove", "Home", new { product = item.product.Id, stat = true })'" />
+                    <input type="button" name="Eddit Detail" value="Eddit Detail" class="btn btn-primary " onclick="location.href='@Url.Action("Detail","Home",new { product = item.product.Id , stat = true})'" /><br />
+                    <input type="button" name="Remove" value="Remove" class="btn btn-primary" onclick="location.href='@Url.Action("Remove","Home",new { product = item.product.Id , stat = true})'" />
                 </td>
-
 
             }
             else
             {
                 <td>
-                    <input type="button" name="AddToCart" value="Add in Cart" class="btn btn-primary" onclick="location.href='@Url.Action("AddInCart", "Home", new { ProId = item.product.Id, CusId = User.Identity.GetUserId() })'" /><br />
-                    <input type="button" name="BuyNow" value="Buy Now" class="btn btn-primary" onclick="location.href='@Url.Action("BuyNowProduct", "Home", new { product = item.product.Id })'" />
+                    <input type="button" name="AddToCart" value="Add in Cart" class="btn btn-primary" onclick="location.href='@Url.Action("AddInCart", "Home",new { ProId = item.product.Id, CusId = User.Identity.GetUserId()})'" /><br />
+                    <input type="button" name="BuyNow" value="Buy Now" class="btn btn-primary" onclick="location.href='@Url.Action("BuyNowProduct", "Home",new {product = item.product.Id})'" />
                 </td>
             }
         </tr>
-
     }
 </table>
