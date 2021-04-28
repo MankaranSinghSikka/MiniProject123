@@ -1,0 +1,41 @@
+﻿@model SharingEconomyPlatform.Models.PaymentInitiateModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<div class="container login-container">
+    <div class="login-card">
+        <div class="login-card-body">
+            @using (Html.BeginForm("CreateOrder", "Payment", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+            <div class="row">
+                <label for="name">Name</label>
+                @Html.EditorFor(m => m.name, new { htmlAttributes = new { @class = "form-control", @Value = Model.name } })
+            </div>
+            <div class="row">
+                <label for="email">Email</label>
+                @Html.EditorFor(m => m.email, new { htmlAttributes = new { @class = "form-control", @Value = Model.email } })
+            </div>
+            <div class="row">
+                <label for="contactNumber">Contact Number</label>
+                @Html.EditorFor(m => m.contactNumber, new { htmlAttributes = new { @class = "form-control", @Value = Model.contactNumber } })
+            </div>
+            <div class="row">
+                <label for="address">Address</label>
+                @Html.EditorFor(m => m.address, new { htmlAttributes = new { @class = "form-control", @Value = Model.address } })
+            </div>
+            <div class="row">
+                <label for="amount">Amount</label>
+                @Html.EditorFor(m => m.amount, new { htmlAttributes = new { @class = "form-control", @Value = Model.amount } })
+            </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            }
+        </div>
+    </div>
+</div>

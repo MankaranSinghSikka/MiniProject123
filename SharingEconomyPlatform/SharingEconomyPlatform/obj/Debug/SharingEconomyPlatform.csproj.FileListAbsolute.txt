@@ -373,5 +373,8 @@ C:\Users\Bharat\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\S
 C:\Users\Bharat\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.dll
 C:\Users\Bharat\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.pdb
 >>>>>>> main
+<<<<<<< HEAD
 C:\Users\Bharat\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\bin\Razorpay.dll
+=======
+>>>>>>> 1b
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\bin\Razorpay.dll
