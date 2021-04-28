@@ -20,15 +20,15 @@
     }
 
     .dd {
-<<<<<<< HEAD
+
         padding-right: 5px
     }
 </style>
 <input type="button" class="btn btn-primary" value="Add Product" onclick="location.href='@Url.Action("AddProduct", "Home")'" />
-=======
+
     }
 </style>
->>>>>>> e21e104285554459bff1fa4ad476021450da6923
+
 
 @if (!Request.IsAuthenticated)
 {
@@ -60,11 +60,11 @@ else if (User.IsInRole("Vendor"))
         <th>Order</th>
 
     </tr>
-<<<<<<< HEAD
+
     @foreach (var item in Model)
-=======
+
     @foreach (var item in Model2)
->>>>>>> e21e104285554459bff1fa4ad476021450da6923
+
     {
         <tr>
             <td>@item.product.Name</td>
@@ -75,10 +75,10 @@ else if (User.IsInRole("Vendor"))
                         <span class="dd">@item.product.Price <b>&#8377</b></span>
                     </div>
 
-<<<<<<< HEAD
-/*<<<<<<< HEAD*/
-=======
->>>>>>> e21e104285554459bff1fa4ad476021450da6923
+
+
+
+
                     <div>
                         <span class="dl">Stock: </span>
                         <span class="dd">@item.product.Stock</span>
@@ -91,7 +91,7 @@ else if (User.IsInRole("Vendor"))
                         <span class="dl">Vendor: </span>
                         <span class="dd">@item.vendor.FirstName @item.vendor.LastName</span>
                     </div>
-<<<<<<< HEAD
+
 
 
                 </dl>
@@ -102,7 +102,7 @@ else if (User.IsInRole("Vendor"))
             </td>
 
         </tr>
-/*=======*/
+
             <div>
                 <span class="dl">Stock: </span>
                 <span class="dd">@item.product.Stock</span>
@@ -115,8 +115,7 @@ else if (User.IsInRole("Vendor"))
                 <span class="dl">Vendor: </span>
                 <span class="dd">@item.vendor.FirstName @item.vendor.LastName</span>
             </div>
-=======
->>>>>>> e21e104285554459bff1fa4ad476021450da6923
+
 
 
                 </dl>
@@ -129,7 +128,7 @@ else if (User.IsInRole("Vendor"))
                     <input type="button" name="Remove" value="Remove" class="btn btn-primary" />
                 </td>
 
-<<<<<<< HEAD
+
     }
     else
     {
@@ -139,8 +138,7 @@ else if (User.IsInRole("Vendor"))
         </td>
     }
 </tr>
-/*>>>>>>> 34e45d9f3b5b2a73e14960cc67c9a4d27c39cf418 */
-=======
+
             }
             else
             {
@@ -150,7 +148,7 @@ else if (User.IsInRole("Vendor"))
                 </td>
             }
         </tr>
->>>>>>> e21e104285554459bff1fa4ad476021450da6923
+
     }
 </table>
 
