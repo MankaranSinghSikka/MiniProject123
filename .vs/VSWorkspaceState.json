@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\SharingEconomyPlatform",
-    "\\SharingEconomyPlatform\\.vs"
+    "\\SharingEconomyPlatform\\SharingEconomyPlatform",
+    "\\SharingEconomyPlatform\\SharingEconomyPlatform\\Models"
   ],
-  "SelectedNode": "\\SharingEconomyPlatform\\SharingEconomyPlatform.sln",
+  "SelectedNode": "\\SharingEconomyPlatform\\SharingEconomyPlatform\\Models\\Product.cs",
   "PreviewInSolutionExplorer": false
 }
