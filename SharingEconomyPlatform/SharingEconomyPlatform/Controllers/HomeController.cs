@@ -99,24 +99,77 @@ namespace SharingEconomyPlatform.Controllers
         }
 
         [Authorize(Roles = "Customer")]
-        public ActionResult BuyNowProduct( int product)
+        public ActionResult BuyNowProduct( int prodid)
         {
-            var data = _context.Products.Where(p => p.Id == product).FirstOrDefault();
-            var pay = new PaymentInitiateModel() { name = "Bharat", address = "something", contactNumber = "9727201414", amount = 120, email = "my@email.com" };
+            var product = _context.Products.Where(p => p.Id == prodid).FirstOrDefault();
+            string id = User.Identity.GetUserId();
+            var cust = _context.Users.Where(u => u.Id == id).FirstOrDefault();
+            var ven = (from p in _context.Products
+                       join u in _context.Users
+                       on p.Vendor.Id equals u.Id
+                       where (p.Id == prodid)
+                       select u).FirstOrDefault();
+            var amount = product.Price;
+            var time = DateTime.Now;
+            var po = new ProductOrder() {Product=product,Customer=cust,Vendor=ven,Count=1,Status='p',Amount=amount,Time=time };
+            _context.ProductOrders.Add(po);
+            var massven = "The Order for (" + product.Name + ") is plased By (" + cust.FirstName + " " + cust.LastName+") .";
+            var not1 = new Notification() { User = ven, Massage = massven, Time = time, Read = false };
+            var masscut = "The Order for " + product.Name + " is plased Successfully";
+            var not2 = new Notification() { User = cust, Massage = masscut, Time = time, Read = false };
+            var pay = new PaymentInitiateModel() { name = cust.FirstName+" "+cust.LastName, address = cust.Address+","+cust.City+"," +cust.State+"," +cust.Zip, 
+                                                    contactNumber = cust.PhoneNumber, amount = (int)(product.Price*1) , email = cust.Email};
+            _context.Notifications.Add(not1);
+            _context.Notifications.Add(not2);
+            _context.SaveChanges();
+            return RedirectToAction("GetPayment", "Payment",pay);
 
+        }
+        [Authorize]
+        public ActionResult Notification()
+        {
+            string id = User.Identity.GetUserId();
+            List<Notification> nots = (from n in _context.Notifications
+                                       where (n.User.Id == id)
+                                       orderby n.Time descending
+                                       select n
+                                       ).ToList();
+            return View(nots);
+        }
+        [Authorize(Roles = "Customer")]
+        public ActionResult BuyNowService(int ServId)
+        {
+            var service = _context.Services.Where(p => p.Id == ServId).FirstOrDefault();
+            string id = User.Identity.GetUserId();
+            var cust = _context.Users.Where(u => u.Id == id).FirstOrDefault();
+            var ven = (from s in _context.Services
+                       join u in _context.Users
+                       on s.Vendor.Id equals u.Id
+                       where (s.Id == ServId)
+                       select u).FirstOrDefault();
+            var amount = service.Price;
+            var time = DateTime.Now;
+            var po = new ServiceOrder() { Service = service, Customer = cust, Vendor = ven, Count = 1, Status = 'p', Amount = amount, Time = time };
+            _context.ServiceOrders.Add(po);
+            var massven = "The Order for (" + service.Name + ") is plased By (" + cust.FirstName + " " + cust.LastName + ") .";
+            var not1 = new Notification() { User = ven, Massage = massven, Time = time, Read = false };
+            var masscut = "The Order for " + service.Name + " is plased Successfully";
+            var not2 = new Notification() { User = cust, Massage = masscut, Time = time, Read = false };
+            var pay = new PaymentInitiateModel()
+            {
+                name = cust.FirstName + " " + cust.LastName,
+                address = cust.Address + "," + cust.City + "," + cust.State + "," + cust.Zip,
+                contactNumber = cust.PhoneNumber,
+                amount = (int)(service.Price * 1),
+                email = cust.Email
+            };
+            _context.Notifications.Add(not1);
+            _context.Notifications.Add(not2);
+            _context.SaveChanges();
             return RedirectToAction("GetPayment", "Payment", pay);
-
-        }
-        [Authorize(Roles = "Customer")]
-        public ActionResult BuyNowService( int product)
-        {
-            var data = _context.Services.Where(p => p.Id == product).FirstOrDefault();
-
-            return View(data);
         }
 
-
-        [Authorize(Roles = "Customer")]
+            [Authorize(Roles = "Customer")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

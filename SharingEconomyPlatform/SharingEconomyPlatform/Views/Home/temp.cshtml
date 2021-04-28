@@ -1,7 +1,9 @@
 ﻿@model SharingEconomyPlatform.Models.Product
+    @using Microsoft.AspNet.Identity.EntityFramework;
 @{
     ViewBag.Title = "temp";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    string t = Model.Category.Name;
 }
 
 <h2>temp</h2>
@@ -15,6 +17,6 @@
     <tr>
         <td>@Model.Name</td>
         <td>@Model.Price</td>
-        <td>@Model.Category.Name</td>
+        <td>@t</td>
     </tr>
 </table>

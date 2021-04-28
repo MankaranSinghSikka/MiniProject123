@@ -109,7 +109,7 @@ else if (User.IsInRole("Vendor"))
             {
                 <td>
                     <input type="button" name="AddToCart" value="Details" class="btn btn-primary" /><br />
-                    <input type="button" name="BuyNow" value="Buy Now" class="btn btn-primary" onclick="location.href='@Url.Action("BuyNowService", "Home",new {product = item.service.Id})'" />
+                    <input type="button" name="BuyNow" value="Buy Now" class="btn btn-primary" onclick="location.href='@Url.Action("BuyNowService", "Home",new {ServId = item.service.Id})'" />
                 </td>
             }
 

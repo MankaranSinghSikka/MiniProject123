@@ -38,11 +38,18 @@
                                         join u in _con.Users
                                         on c.Customer.Id equals u.Id
                                         select c.Customer.Id).Where(c => c == id).Count();
+                        var notifications = (from c in _con.Notifications
+                                             join u in _con.Users
+                                             on c.User.Id equals u.Id
+                                             select c.User.Id).Where(c => c == id).Count();
                     }
                     @if (User.IsInRole("Customer"))
                     {
                         <li>@Html.ActionLink("Cart(" + @cartItem + ")", "ViewCart", "Home")</li>
+
+
                     }
+                    <li>@Html.ActionLink("Notifications(" + @notifications + ")", "Notification", "Home")</li>
 
                 </ul>
 
