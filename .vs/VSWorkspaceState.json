@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\SharingEconomyPlatform",
-    "\\SharingEconomyPlatform\\SharingEconomyPlatform\\Controllers",
-    "\\SharingEconomyPlatform\\SharingEconomyPlatform\\Views\\Home"
+    "\\SharingEconomyPlatform"
   ],
-  "SelectedNode": "\\SharingEconomyPlatform\\SharingEconomyPlatform",
+  "SelectedNode": "\\SharingEconomyPlatform\\SharingEconomyPlatform.sln",
   "PreviewInSolutionExplorer": false
 }

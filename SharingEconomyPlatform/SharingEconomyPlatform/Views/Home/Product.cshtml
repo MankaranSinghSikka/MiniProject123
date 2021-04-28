@@ -88,8 +88,8 @@ else if (User.IsInRole("Vendor"))
             {
 
                 <td>
-                    <input type="button" name="Eddit Detail" value="Eddit Detail" class="btn btn-primary " id="remove" onclick="c()"/><br />
-                    <input type="button" name="Remove" value="Remove" class="btn btn-primary" onclick="location.href='@Url.Action("Remove","Home",new { product = item.product.Id})'"  />
+                    <input type="button" name="Eddit Detail" value="Eddit Detail" class="btn btn-primary " onclick="location.href='@Url.Action("Detail","Home",new { product = item.product.Id , stat = true})'" /><br />
+                    <input type="button" name="Remove" value="Remove" class="btn btn-primary" onclick="location.href='@Url.Action("Remove","Home",new { product = item.product.Id , stat = true})'"  />
                 </td>
 
             }

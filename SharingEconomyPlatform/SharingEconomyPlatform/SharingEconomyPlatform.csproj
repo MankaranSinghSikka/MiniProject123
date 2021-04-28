@@ -405,6 +405,7 @@
     <Content Include="Views\Home\BuyNowProduct.cshtml" />
     <Content Include="Views\Home\BuyNowService.cshtml" />
     <Content Include="Views\Home\temp.cshtml" />
+    <Content Include="Views\Home\DetailP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
