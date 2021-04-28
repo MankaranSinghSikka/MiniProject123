@@ -102,8 +102,10 @@ namespace SharingEconomyPlatform.Controllers
         public ActionResult BuyNowProduct( int product)
         {
             var data = _context.Products.Where(p => p.Id == product).FirstOrDefault();
+            var pay = new PaymentInitiateModel() { name = "Bharat", address = "something", contactNumber = "9727201414", amount = 120, email = "my@email.com" };
 
-            return View(data);
+            return RedirectToAction("GetPayment", "Payment", pay);
+
         }
         [Authorize(Roles = "Customer")]
         public ActionResult BuyNowService( int product)
