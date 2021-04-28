@@ -56,9 +56,10 @@ namespace SharingEconomyPlatform.Models
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<ProductOrder> ProductOrders { get; set; }
         public DbSet<ServiceOrder> ServiceOrders { get; set; }
+        public DbSet<Helprequest> Helprequests { get; set; }
 
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DefaultConnection2", throwIfV1Schema: false)
         {
         }
 

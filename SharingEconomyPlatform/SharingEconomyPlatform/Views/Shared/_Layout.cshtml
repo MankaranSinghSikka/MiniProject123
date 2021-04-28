@@ -49,8 +49,10 @@
 
 
                     }
+                    @if (Request.IsAuthenticated)
+                    {
                     <li>@Html.ActionLink("Notifications(" + @notifications + ")", "Notification", "Home")</li>
-
+                    }
                 </ul>
 
                 @Html.Partial("_LoginPartial")
