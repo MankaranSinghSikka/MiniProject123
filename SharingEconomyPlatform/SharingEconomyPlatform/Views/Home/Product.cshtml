@@ -66,6 +66,9 @@ else if (User.IsInRole("Vendor"))
     </tr>
 
     @foreach (var item in Model)
+            {
+
+            }
 
     @foreach (var item in Model2)
 
@@ -122,8 +125,7 @@ else if (User.IsInRole("Vendor"))
 
 
 
-                </dl>
-            </td>
+             
             @if (User.IsInRole("Admin") || User.IsInRole("Vendor"))
             {
 
@@ -133,13 +135,13 @@ else if (User.IsInRole("Vendor"))
                 </td>
 
 
-    }
-    else
-    {
-        <td>
-            <input type="button" name="AddToCart" value="Add in Cart" class="btn btn-primary" onclick="location.href='@Url.Action("AddInCart", "Home",new { ProId = item.product.Id, CusId = User.Identity.GetUserId()})'"/><br />
-            <input type="button" name="BuyNow" value="Buy Now" class="btn btn-primary" onclick="location.href='@Url.Action("BuyNowProduct", "Home",new {product = item.product.Id})'" />
-        </td>
+             }
+                else
+                {
+                <td>
+                    <input type="button" name="AddToCart" value="Add in Cart" class="btn btn-primary" onclick="location.href='@Url.Action("AddInCart", "Home",new { ProId = item.product.Id, CusId = User.Identity.GetUserId()})'"/><br />
+                    <input type="button" name="BuyNow" value="Buy Now" class="btn btn-primary" onclick="location.href='@Url.Action("BuyNowProduct", "Home",new {product = item.product.Id})'" />
+                </td>
     }
 </tr>
 
