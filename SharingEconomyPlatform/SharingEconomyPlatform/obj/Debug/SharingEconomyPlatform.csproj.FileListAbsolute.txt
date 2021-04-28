@@ -121,3 +121,5 @@ C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\S
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.csproj.CopyComplete
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.dll
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.pdb
+C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.csprojAssemblyReference.cache
+C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.seedUsers.resources

@@ -235,6 +235,10 @@
     <Compile Include="Migrations\202104260446385_GetProductDetails.Designer.cs">
       <DependentUpon>202104260446385_GetProductDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104281322099_seedUsers.cs" />
+    <Compile Include="Migrations\202104281322099_seedUsers.Designer.cs">
+      <DependentUpon>202104281322099_seedUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -466,6 +470,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104260446385_GetProductDetails.resx">
       <DependentUpon>202104260446385_GetProductDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104281322099_seedUsers.resx">
+      <DependentUpon>202104281322099_seedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
