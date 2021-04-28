@@ -7,7 +7,12 @@
     List<productCatView> Model2 = Model;
 
 }
-
+<script src="//code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    function c() {
+        alert("ok");
+    }
+</script>
 <style>
     .btn {
         margin: 5px;
@@ -60,11 +65,8 @@ else if (User.IsInRole("Vendor"))
         <th>Order</th>
 
     </tr>
-<<<<<<< HEAD
-    @foreach (var item in Model)
-=======
+
     @foreach (var item in Model2)
->>>>>>> e21e104285554459bff1fa4ad476021450da6923
     {
         <tr>
             <td>@item.product.Name</td>
@@ -75,11 +77,6 @@ else if (User.IsInRole("Vendor"))
                         <span class="dd">@item.product.Price <b>&#8377</b></span>
                     </div>
 
-<<<<<<< HEAD
-/*<<<<<<< HEAD*/
-=======
->>>>>>> e21e104285554459bff1fa4ad476021450da6923
-                    <div>
                         <span class="dl">Stock: </span>
                         <span class="dd">@item.product.Stock</span>
                     </div>
@@ -91,7 +88,6 @@ else if (User.IsInRole("Vendor"))
                         <span class="dl">Vendor: </span>
                         <span class="dd">@item.vendor.FirstName @item.vendor.LastName</span>
                     </div>
-<<<<<<< HEAD
 
 
                 </dl>
@@ -102,7 +98,6 @@ else if (User.IsInRole("Vendor"))
             </td>
 
         </tr>
-/*=======*/
             <div>
                 <span class="dl">Stock: </span>
                 <span class="dd">@item.product.Stock</span>
@@ -115,9 +110,6 @@ else if (User.IsInRole("Vendor"))
                 <span class="dl">Vendor: </span>
                 <span class="dd">@item.vendor.FirstName @item.vendor.LastName</span>
             </div>
-=======
->>>>>>> e21e104285554459bff1fa4ad476021450da6923
-
 
                 </dl>
             </td>
@@ -125,23 +117,10 @@ else if (User.IsInRole("Vendor"))
             {
 
                 <td>
-                    <input type="button" name="Eddit Detail" value="Eddit Detail" class="btn btn-primary" /><br />
-                    <input type="button" name="Remove" value="Remove" class="btn btn-primary" />
+                    <input type="button" name="Eddit Detail" value="Eddit Detail" class="btn btn-primary " onclick="location.href='@Url.Action("Detail","Home",new { product = item.product.Id , stat = true})'" /><br />
+                    <input type="button" name="Remove" value="Remove" class="btn btn-primary" onclick="location.href='@Url.Action("Remove","Home",new { product = item.product.Id , stat = true})'"  />
                 </td>
-
-<<<<<<< HEAD
-    }
-    else
-    {
-        <td>
-            <input type="button" name="AddToCart" value="Add in Cart" class="btn btn-primary" onclick="location.href='@Url.Action("AddInCart", "Home",new { ProId = item.product.Id, CusId = User.Identity.GetUserId()})'"/><br />
-            <input type="button" name="BuyNow" value="Buy Now" class="btn btn-primary" onclick="location.href='@Url.Action("BuyNowProduct", "Home",new {product = item.product.Id})'" />
-        </td>
-    }
-</tr>
-/*>>>>>>> 34e45d9f3b5b2a73e14960cc67c9a4d27c39cf418 */
-=======
-            }
+  }
             else
             {
                 <td>
@@ -150,9 +129,9 @@ else if (User.IsInRole("Vendor"))
                 </td>
             }
         </tr>
->>>>>>> e21e104285554459bff1fa4ad476021450da6923
     }
 </table>
+
 
 @foreach (var item in Model)
 {
@@ -184,4 +163,3 @@ else if (User.IsInRole("Vendor"))
 </div>
 
 }
-
