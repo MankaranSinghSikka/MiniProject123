@@ -53,6 +53,11 @@ namespace SharingEconomyPlatform.Controllers
             return View();
         }
 
+        public ActionResult Remove(string product)
+        {
+            return RedirectToAction("Product");
+
+        }
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
