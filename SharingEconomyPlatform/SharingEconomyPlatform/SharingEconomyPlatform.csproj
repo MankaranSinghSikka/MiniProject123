@@ -176,6 +176,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -235,17 +237,38 @@
     <Compile Include="Migrations\202104260446385_GetProductDetails.Designer.cs">
       <DependentUpon>202104260446385_GetProductDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104281322099_seedUsers.cs" />
+    <Compile Include="Migrations\202104281322099_seedUsers.Designer.cs">
+      <DependentUpon>202104281322099_seedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104281406134_EdditedNotificationTable.cs" />
+    <Compile Include="Migrations\202104281406134_EdditedNotificationTable.Designer.cs">
+      <DependentUpon>202104281406134_EdditedNotificationTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104281437435_AddProductOrderTable.cs" />
+    <Compile Include="Migrations\202104281437435_AddProductOrderTable.Designer.cs">
+      <DependentUpon>202104281437435_AddProductOrderTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104281451178_AddServiceOrderTable.cs" />
+    <Compile Include="Migrations\202104281451178_AddServiceOrderTable.Designer.cs">
+      <DependentUpon>202104281451178_AddServiceOrderTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Magic.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\ServiceOrder.cs" />
+    <Compile Include="Models\ProductOrder.cs" />
     <Compile Include="Models\PaymentInitiateModel.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductAll.cs" />
     <Compile Include="Models\Service.cs" />
+    <Compile Include="Models\ServiceAll.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -418,6 +441,7 @@
     <Content Include="Views\Payment\Success.cshtml" />
     <Content Include="Views\Payment\Failed.cshtml" />
     <Content Include="Views\Payment\PaymentPage.cshtml" />
+    <Content Include="Views\Home\Notification.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -467,11 +491,26 @@
     <EmbeddedResource Include="Migrations\202104260446385_GetProductDetails.resx">
       <DependentUpon>202104260446385_GetProductDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104281322099_seedUsers.resx">
+      <DependentUpon>202104281322099_seedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104281406134_EdditedNotificationTable.resx">
+      <DependentUpon>202104281406134_EdditedNotificationTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104281437435_AddProductOrderTable.resx">
+      <DependentUpon>202104281437435_AddProductOrderTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104281451178_AddServiceOrderTable.resx">
+      <DependentUpon>202104281451178_AddServiceOrderTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Product\" />
+    <Folder Include="Views\Service\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

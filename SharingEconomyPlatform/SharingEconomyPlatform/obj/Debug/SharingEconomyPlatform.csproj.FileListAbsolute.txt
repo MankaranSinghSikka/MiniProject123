@@ -69,6 +69,7 @@ C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\S
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\bin\Newtonsoft.Json.dll
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\bin\Owin.dll
+C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\bin\Razorpay.dll
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\bin\System.Web.Helpers.dll
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\bin\System.Web.Mvc.dll
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\bin\System.Web.Optimization.dll
@@ -114,16 +115,14 @@ C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\S
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.AddCartTable1.resources
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.AddedNotificationTable.resources
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.AddedTransactionTable.resources
-<<<<<<< HEAD
->>>>>>> efea16ad69bbd131ce58ce0439454f6b43dab920
-C:\Users\Karan\source\repos\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.AddedTransactionTable.resources
-=======
+C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.GetProductDetails.resources
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.csproj.GenerateResource.cache
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.csproj.CoreCompileInputs.cache
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.csproj.CopyComplete
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.dll
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.pdb
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.csprojAssemblyReference.cache
+<<<<<<< HEAD
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.GetProductDetails.resources
 >>>>>>> 454beb172a66d113ebc11cd24f374f089e218821
 >>>>>>> 34e45d9f3b5b2a73e14960cc67c9a4d27c39cf41
@@ -376,3 +375,9 @@ C:\Users\Bharat\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\S
 C:\Users\Bharat\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\bin\Razorpay.dll
 >>>>>>> 1b
 C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\bin\Razorpay.dll
+=======
+C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.seedUsers.resources
+C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.EdditedNotificationTable.resources
+C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.AddProductOrderTable.resources
+C:\Users\893976\Source\Repos\KhairnarBharat\MiniProject\SharingEconomyPlatform\SharingEconomyPlatform\obj\Debug\SharingEconomyPlatform.Migrations.AddServiceOrderTable.resources
+>>>>>>> 1f0a23cbc2550507db543ff2fc21cf5e8c32c792

@@ -18,5 +18,12 @@ namespace SharingEconomyPlatform.Models
         [Required]
         [MaxLength(500)]
         public string Massage { get; set; }
+        
+        [Required]
+        public DateTime Time { get; set; }
+
+        [Required]
+        public bool Read { get; set; }
+
     }
 }

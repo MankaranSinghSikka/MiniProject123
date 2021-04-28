@@ -54,6 +54,8 @@ namespace SharingEconomyPlatform.Models
         public DbSet<Cart> Carts { get; set; }
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<ProductOrder> ProductOrders { get; set; }
+        public DbSet<ServiceOrder> ServiceOrders { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

@@ -4,17 +4,23 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Razor;
-
+using SharingEconomyPlatform.Models;
 namespace SharingEconomyPlatform.Controllers
 {
     public class PaymentController : Controller
     {
+        protected ApplicationDbContext _context;
         // GET: Payment
         public ActionResult Index()
         {
             return View();
         }
 
+        public PaymentController()
+        {
+            _context = new ApplicationDbContext();
+           
+        }
         public ActionResult GetPayment(Models.PaymentInitiateModel _requestData)
         {
             return View("Index", _requestData);
@@ -93,6 +99,7 @@ namespace SharingEconomyPlatform.Controllers
             if (paymentCaptured.Attributes["status"] == "captured")
             {
                 // Create these action method
+
                 return RedirectToAction("Success");
             }
             else
@@ -103,6 +110,7 @@ namespace SharingEconomyPlatform.Controllers
 
         public ActionResult Success()
         {
+            Notification n = new Notification() { };
             return View();
         }
 

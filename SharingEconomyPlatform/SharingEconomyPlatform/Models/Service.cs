@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SharingEconomyPlatform.Models
 {
-    public class Service
+    public class Service:Entity
     {
 
         [Key]
