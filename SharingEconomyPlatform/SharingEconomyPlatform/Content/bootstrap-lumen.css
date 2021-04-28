@@ -4545,16 +4545,16 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 .navbar-inverse {
     /*background-color: #ffffff;*/
-    background-color: #FF3B77;
+    background-color: #148BBA;
     /*border-color: #e6e6e6;*/
-    border-color: #FF8598;
+    border-color: #36C6FF;
 }
 .navbar-inverse .navbar-brand {
   color: #fff;
 }
     .navbar-inverse .navbar-brand:hover,
     .navbar-inverse .navbar-brand:focus {
-        color: #860D32;
+        color: #06506E;
         background-color: transparent;
     }
 .navbar-inverse .navbar-text {

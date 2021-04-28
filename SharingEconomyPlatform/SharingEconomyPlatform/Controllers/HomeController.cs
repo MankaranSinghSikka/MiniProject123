@@ -53,11 +53,42 @@ namespace SharingEconomyPlatform.Controllers
             return View();
         }
 
-        public ActionResult Remove(string product)
+        public ActionResult Remove(int product ,bool stat)
         {
-            return RedirectToAction("Product");
+            if (stat)
+            {
+                Product p = _context.Products.Where(m => m.Id == product).FirstOrDefault();
+                _context.Products.Remove(p);
+                _context.SaveChanges();
+                return RedirectToAction("Product");
+            }
+            else
+            {
+                Service p = _context.Services.Where(m => m.Id == product).FirstOrDefault();
+                _context.Services.Remove(p);
+                _context.SaveChanges();
+                return RedirectToAction("Service");
 
+            }
         }
+
+        public ActionResult Detail(int product, bool stat)
+        {
+            if (stat)
+            {
+                Product p = _context.Products.Where(m => m.Id == product).FirstOrDefault();
+                return View("DetailP",p);
+            }
+            else
+            {
+                Service p = _context.Services.Where(m => m.Id == product).FirstOrDefault();
+                _context.Services.Remove(p);
+                _context.SaveChanges();
+                return RedirectToAction("Service");
+
+            }
+        }
+
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();

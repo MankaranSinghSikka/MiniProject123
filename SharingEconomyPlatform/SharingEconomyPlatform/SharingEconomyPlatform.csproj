@@ -250,6 +250,7 @@
     <Content Include="App_Data\aspnet-SharingEconomyPlatform-20210416102253_log.ldf">
       <DependentUpon>aspnet-SharingEconomyPlatform-20210416102253.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -405,6 +406,7 @@
     <Content Include="Views\Home\BuyNowProduct.cshtml" />
     <Content Include="Views\Home\BuyNowService.cshtml" />
     <Content Include="Views\Home\temp.cshtml" />
+    <Content Include="Views\Home\DetailP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
