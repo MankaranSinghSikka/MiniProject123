@@ -7,7 +7,12 @@
     List<productCatView> Model2 = Model;
 
 }
-
+<script src="//code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    function c() {
+        alert("ok");
+    }
+</script>
 <style>
     .btn {
         margin: 5px;
@@ -16,7 +21,6 @@
     .dl {
         font-weight: bold;
         margin-right: 5px;
-        padding-right: 5px
     }
 
     .dd {
@@ -124,8 +128,8 @@ else if (User.IsInRole("Vendor"))
             {
 
                 <td>
-                    <input type="button" name="Eddit Detail" value="Eddit Detail" class="btn btn-primary" /><br />
-                    <input type="button" name="Remove" value="Remove" class="btn btn-primary" />
+                    <input type="button" name="Eddit Detail" value="Eddit Detail" class="btn btn-primary " onclick="location.href='@Url.Action("Detail","Home",new { product = item.product.Id , stat = true})'" /><br />
+                    <input type="button" name="Remove" value="Remove" class="btn btn-primary" onclick="location.href='@Url.Action("Remove","Home",new { product = item.product.Id , stat = true})'" />
                 </td>
 
 
@@ -151,35 +155,3 @@ else if (User.IsInRole("Vendor"))
 
     }
 </table>
-
-@foreach (var item in Model)
-{
-<div class="card text-white bg-info mb-3" style="max-width: 20rem;">
-    <h2 class="card-header" style="padding-right: 5px">@item.product.Name</h2>
-    <div class="card-body">
-        <div>
-            <span class="dl">Price: </span>
-            <span class="dd">@item.product.Price <b>&#8377</b></span>
-        </div>
-        <div>
-            <span class="dl">Stock: </span>
-            <span class="dd">@item.product.Stock</span>
-        </div>
-        <div>
-            <span class="dl">Category: </span>
-            <span class="dd">@item.category.Name</span>
-        </div>
-        <div>
-            <span class="dl">Vendor: </span>
-            <span class="dd">@item.vendor.FirstName @item.vendor.LastName</span>
-        </div>
-        
-    </div>
-    <div>
-        <input type="button" name="AddToCart" value="Add in Cart" class="btn btn-primary" /><br />
-        <input type="button" name="BuyNow" value="Buy Now" class="btn btn-primary" />
-    </div>
-</div>
-
-}
-
