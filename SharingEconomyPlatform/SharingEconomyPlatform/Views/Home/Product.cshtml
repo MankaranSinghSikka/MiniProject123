@@ -50,7 +50,7 @@ else if (User.IsInRole("Vendor"))
 
     Model2 = (from m in Model where m.vendor.Id == id select m).ToList();
 }
-<table class="table">
+<table class="table table-striped">
     <tr>
         <th>Name</th>
         <th>Details</th>

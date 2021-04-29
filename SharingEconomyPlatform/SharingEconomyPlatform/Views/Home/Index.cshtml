@@ -27,7 +27,14 @@
 }
 @Styles.Render("~/Content/my style.css")
 
-
+<style>
+    .av{
+        color:green;
+    }
+    .ua{
+        color:red;
+    }
+</style>
 
 <div class="jumbotron">
     <h1>Hi @demo</h1>
@@ -63,7 +70,7 @@
 </div>
 <br />
 
-<h2> Servises</h2>
+<h2> Services</h2>
 <hr />
 <div class="row">
     @foreach (var item in services)
@@ -74,7 +81,10 @@
                 <div class="container">
                     <h4><b>@item.service.Name</b></h4>
                     <p><b>Rate :</b><span> @item.service.Price</span><b>&#8377</b></p>
-                    <p><b>Stock :</b><span>@item.service.Available</span></p>
+                    <p><b>Stock :</b><span>@if (@item.service.Available)
+{<span class="av">Available</span> }
+else
+{<span class="ua">Not Available</span>}</span></p>
                     <p><b>Category :</b><span>@item.category.Name</span></p>
                     <p><b>Vendor :</b><span>@item.vendor.FirstName @item.vendor.LastName</span></p>
 

@@ -280,10 +280,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\aspnet-SharingEconomyPlatform-20210416102253.mdf" />
-    <Content Include="App_Data\aspnet-SharingEconomyPlatform-20210416102253_log.ldf">
-      <DependentUpon>aspnet-SharingEconomyPlatform-20210416102253.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -518,6 +514,7 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Views\Product\" />
     <Folder Include="Views\Service\" />
   </ItemGroup>
