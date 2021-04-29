@@ -100,7 +100,7 @@ else if (User.IsInRole("Vendor"))
             {
 
                 <td>
-                    <input type="button" name="Eddit Detail" value="Eddit Detail" class="btn btn-primary" /><br />
+                    <input type="button" name="Eddit Detail" value="Eddit Detail" class="btn btn-primary"  onclick="location.href='@Url.Action("Detail","Home",new { product = item.service.Id , stat = false})'" /><br />
                     <input type="button" name="Remove" value="Remove" class="btn btn-primary" onclick="location.href='@Url.Action("Remove","Home",new { product = item.service.Id , stat = false})'" />
                 </td>
 

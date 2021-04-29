@@ -43,10 +43,11 @@
 <hr />
 
 <div class="row">
+    
     @foreach (var item in products)
     {
-
-        <div class="col-md-3">
+    
+        <div class="col-md-3" onclick="location.href = '@Url.Action("Product","Home")'">
             <div class="cardp">
                 <div class="container">
                     <h4><b>@item.product.Name</b></h4>
@@ -68,7 +69,7 @@
     @foreach (var item in services)
     {
 
-        <div class="col-md-3">
+        <div class="col-md-3" onclick="location.href = '@Url.Action("Service","Home")'">
             <div class="cardp">
                 <div class="container">
                     <h4><b>@item.service.Name</b></h4>

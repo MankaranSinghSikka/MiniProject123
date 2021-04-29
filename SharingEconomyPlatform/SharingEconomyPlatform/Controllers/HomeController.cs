@@ -82,13 +82,27 @@ namespace SharingEconomyPlatform.Controllers
             else
             {
                 Service p = _context.Services.Where(m => m.Id == product).FirstOrDefault();
-                _context.Services.Remove(p);
-                _context.SaveChanges();
-                return RedirectToAction("Service");
+                
+                return View("DetailS", p);
+
 
             }
         }
+        public ActionResult EdditDetailsP(Product p)
+        {
+            var pt = _context.Products.Where(m => m.Id == p.Id).FirstOrDefault();
+            pt = p;
+            _context.SaveChanges();
+            return RedirectToAction("Product");
+        }
 
+        public ActionResult EdditDetailss(Service p)
+        {
+            var pt = _context.Services.Where(m => m.Id == p.Id).FirstOrDefault();
+            pt = p;
+            _context.SaveChanges();
+            return RedirectToAction("Product");
+        }
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
@@ -113,9 +127,9 @@ namespace SharingEconomyPlatform.Controllers
             var time = DateTime.Now;
             var po = new ProductOrder() {Product=product,Customer=cust,Vendor=ven,Count=1,Status='p',Amount=amount,Time=time };
             _context.ProductOrders.Add(po);
-            var massven = "The Order for (" + product.Name + ") is plased By (" + cust.FirstName + " " + cust.LastName+") .";
+            var massven = "The Order for Product (" + product.Name + ") is plased By (" + cust.FirstName + " " + cust.LastName+") .";
             var not1 = new Notification() { User = ven, Massage = massven, Time = time, Read = false };
-            var masscut = "The Order for " + product.Name + " is plased Successfully";
+            var masscut = "The Order for Product ( " + product.Name + " ) is plased Successfully";
             var not2 = new Notification() { User = cust, Massage = masscut, Time = time, Read = false };
             var pay = new PaymentInitiateModel() { name = cust.FirstName+" "+cust.LastName, address = cust.Address+","+cust.City+"," +cust.State+"," +cust.Zip, 
                                                     contactNumber = cust.PhoneNumber, amount = (int)(product.Price*1) , email = cust.Email};
@@ -151,9 +165,9 @@ namespace SharingEconomyPlatform.Controllers
             var time = DateTime.Now;
             var po = new ServiceOrder() { Service = service, Customer = cust, Vendor = ven, Count = 1, Status = 'p', Amount = amount, Time = time };
             _context.ServiceOrders.Add(po);
-            var massven = "The Order for (" + service.Name + ") is plased By (" + cust.FirstName + " " + cust.LastName + ") .";
+            var massven = "The Order for Servisce (" + service.Name + ") is plased By (" + cust.FirstName + " " + cust.LastName + ") .";
             var not1 = new Notification() { User = ven, Massage = massven, Time = time, Read = false };
-            var masscut = "The Order for " + service.Name + " is plased Successfully";
+            var masscut = "The Order for Service ( " + service.Name + " ) is plased Successfully";
             var not2 = new Notification() { User = cust, Massage = masscut, Time = time, Read = false };
             var pay = new PaymentInitiateModel()
             {

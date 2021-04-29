@@ -3,8 +3,8 @@
     "",
     "\\SharingEconomyPlatform",
     "\\SharingEconomyPlatform\\SharingEconomyPlatform",
-    "\\SharingEconomyPlatform\\SharingEconomyPlatform\\Models"
+    "\\SharingEconomyPlatform\\SharingEconomyPlatform\\Controllers"
   ],
-  "SelectedNode": "\\SharingEconomyPlatform\\SharingEconomyPlatform\\Models\\Product.cs",
+  "SelectedNode": "\\SharingEconomyPlatform\\SharingEconomyPlatform.sln",
   "PreviewInSolutionExplorer": false
 }

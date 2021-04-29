@@ -15,14 +15,13 @@
 
 }
 
-<h2>Eddit Profile</h2>
-<h2>@id</h2>
-<h2>@data.FirstName</h2>
+
+<h2>@data.FirstName @data.LastName</h2>
 
 @using (Html.BeginForm("EdditProfile", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
+    <h4>You can change your personal details hare.</h4>
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
 
@@ -94,12 +93,12 @@
             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
         </div>
     </div>
-    <div>
+    <div class="hidden">
         @Html.EditorFor(m => m.Id, new { htmlAttributes = new { @class = "form-control", @Value = data.Id } })
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
+            <input type="submit" class="btn btn-default" value="Submit" />
         </div>
     </div>
 }
