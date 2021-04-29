@@ -1,0 +1,27 @@
+﻿@model List<SharingEconomyPlatform.Models.Helprequest>
+    @using SharingEconomyPlatform.Models;
+@{
+    ViewBag.Title = "Requests";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var _con = new ApplicationDbContext();
+
+}
+
+<h2>Help Requests</h2>
+
+<table class="table table-striped" >
+    <tr>
+        <th>Title</th>
+        <th>Desctiption</th>
+        <th>Time</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.Title</td>
+    <td>@item.Description</td>
+    <td>@item.Time</td>
+</tr>
+            }
+</table>

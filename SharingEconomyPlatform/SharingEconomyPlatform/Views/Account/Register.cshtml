@@ -28,6 +28,7 @@
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
         </div>
+        @Html.ValidationMessageFor(m => m.FirstName)
     </div>
 
     <div class="form-group">
@@ -35,13 +36,15 @@
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
         </div>
+        @Html.ValidationMessageFor(m=>m.LastName)
     </div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.Gender, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.DropDownListFor(m => m.Gender, new SelectList(Genders),"Select", new { @class = "form-control" })
+            @Html.DropDownListFor(m => m.Gender, new SelectList(Genders), "Select", new { @class = "form-control" })
         </div>
+        @Html.ValidationMessageFor(m => m.Gender)
     </div>
 
     <div class="form-group">
@@ -49,13 +52,15 @@
         <div class="col-md-10">
             @Html.EditorFor(m => m.DOB, new { htmlAttributes = new { @class = "form-control" } })
         </div>
+        @Html.ValidationMessageFor(m => m.DOB)
     </div>
     
-     <div class="form-group">
+    <div class="form-group has-danger">
         @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.PhoneNumber,new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
         </div>
+        @Html.ValidationMessageFor(m => m.PhoneNumber)
     </div>
     
     
@@ -64,12 +69,14 @@
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
         </div>
+        @Html.ValidationMessageFor(m => m.Address)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.City, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
         </div>
+        @Html.ValidationMessageFor(m => m.City)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.State, new { @class = "col-md-2 control-label" })
@@ -105,7 +112,7 @@
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
+            <button type="submit" class="btn btn-primary">Register</button>
         </div>
     </div>
 }

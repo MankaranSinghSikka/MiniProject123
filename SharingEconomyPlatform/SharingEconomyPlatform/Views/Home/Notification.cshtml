@@ -1,0 +1,22 @@
+﻿@model List<SharingEconomyPlatform.Models.Notification>
+@{
+    ViewBag.Title = "Notification";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Notification</h2>
+<table class="table table-striped">
+    <tr>
+        <th>Massage</th>
+        <th>Time</th>
+    </tr>
+    @foreach(var not in Model)
+    {
+        <tr>
+            <td>@not.Massage</td>
+            <td>@not.Time</td>
+        </tr>
+    }
+
+</table>
+

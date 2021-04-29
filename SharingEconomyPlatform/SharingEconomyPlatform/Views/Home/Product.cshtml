@@ -1,0 +1,105 @@
+﻿@using SharingEconomyPlatform.Models;
+@using Microsoft.AspNet.Identity;
+@model List<productCatView>
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<productCatView> Model2 = Model;
+
+}
+<script src="//code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    function c() {
+        alert("ok");
+    }
+</script>
+<style>
+    .btn {
+        margin: 5px;
+    }
+
+    .dl {
+        font-weight: bold;
+        margin-right: 5px;
+    }
+
+    .dd {
+    }
+</style>
+
+@if (!Request.IsAuthenticated)
+{
+
+    <h2>Products</h2>
+}
+else if (User.IsInRole("Customer"))
+{
+    <h2>Products</h2>
+
+
+}
+else if (User.IsInRole("Admin"))
+{
+    <h2>Products Available</h2>
+}
+else if (User.IsInRole("Vendor"))
+{
+    <h2>Products Awailable In Repository</h2>
+    <input type="button" class="btn btn-primary" value="Add Product" onclick="location.href='@Url.Action("AddProduct", "Home")'" />
+    var id = User.Identity.GetUserId();
+
+    Model2 = (from m in Model where m.vendor.Id == id select m).ToList();
+}
+<table class="table table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Details</th>
+        <th>Order</th>
+
+    </tr>
+    @foreach (var item in Model2)
+    {
+        <tr>
+            <td>@item.product.Name</td>
+            <td>
+                <dl>
+                    <div>
+                        <span class="dl">Price: </span>
+                        <span class="dd">@item.product.Price <b>&#8377</b></span>
+                    </div>
+
+                    <div>
+                        <span class="dl">Stock: </span>
+                        <span class="dd">@item.product.Stock</span>
+                    </div>
+                    <div>
+                        <span class="dl">Category: </span>
+                        <span class="dd">@item.category.Name</span>
+                    </div>
+                    <div>
+                        <span class="dl">Vendor: </span>
+                        <span class="dd">@item.vendor.FirstName @item.vendor.LastName</span>
+                    </div>
+
+
+                </dl>
+            </td>
+            @if (User.IsInRole("Admin") || User.IsInRole("Vendor"))
+            {
+
+                <td>
+                    <input type="button" name="Eddit Detail" value="Eddit Detail" class="btn btn-primary " onclick="location.href='@Url.Action("Detail","Home",new { product = item.product.Id , stat = true})'" /><br />
+                    <input type="button" name="Remove" value="Remove" class="btn btn-primary" onclick="location.href='@Url.Action("Remove","Home",new { product = item.product.Id , stat = true})'" />
+                </td>
+
+            }
+            else
+            {
+                <td>
+                    <input type="button" name="AddToCart" value="Add in Cart" class="btn btn-primary" onclick="location.href='@Url.Action("AddInCart", "Home",new { ProId = item.product.Id, CusId = User.Identity.GetUserId()})'" /><br />
+                    <input type="button" name="BuyNow" value="Buy Now" class="btn btn-primary" onclick="location.href='@Url.Action("BuyNowProduct", "Home",new {prodid = item.product.Id})'" />
+                </td>
+            }
+        </tr>
+    }
+</table>
